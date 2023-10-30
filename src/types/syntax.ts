@@ -4,6 +4,6 @@ export enum StatementKind {
 } 
 
 export abstract class Statement {
-  public kind: StatementKind;
+  declare kind: StatementKind;
 }
 

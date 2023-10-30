@@ -1,13 +1,13 @@
 {
   "name": "cordbuilder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Cord Builder is a library that provides a Domain Specific Language (DSL) for creating builders for Discord.js. Currently, it supports the creation of buttons.",
+  "main": "dist/index.js",
   "scripts": {
     "test": "tsx src/index.spec.ts"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["discord.js", "discordjs", "discord", "builders"],
+  "author": "drezzyts",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.8.9",

@@ -7,13 +7,13 @@ Cord Builder is a library that provides a Domain Specific Language (DSL) for cre
 To install the library, you can use npm or yarn:
 
 ```bash
-npm install cord-builder
+npm install cordbuilder
 ```
 
 or
 
 ```bash
-yarn add cord-builder
+yarn add cordbuilder
 ```
 
 ## Usage
