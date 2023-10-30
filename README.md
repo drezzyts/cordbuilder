@@ -21,7 +21,7 @@ yarn add cordbuilder
 ### Button
 
 ```javascript
-const { Button } = require('cord-builder');
+const { Button } = require('cordbuilder');
 
 // The `Button.from()` function allows you to create a button from a specific source code:
 

@@ -21,9 +21,10 @@ export class Button {
     const style = btn.data.style as ButtonStyle;
     if(props.includes('label')) btn.setLabel(Button.validateLabel(button));
     if(props.includes('emoji')) btn.setEmoji(Button.validateEmoji(button));
-    if(props.includes('url')) btn.setURL(Button.validateLink(button, style));
-    if(props.includes('id')) btn.setCustomId(Button.validateCustomId(button));
     if(props.includes('disabled')) btn.setDisabled(Button.validateDisabled(button));
+    
+    if(props.includes('url')) btn.setURL(Button.validateLink(button, style));
+    else btn.setCustomId(Button.validateCustomId(button));
   }
 
   private static validateProperties(button: BuilderDefinition) : ButtonBuilder {
@@ -32,11 +33,12 @@ export class Button {
 
     btn.setLabel(Button.validateLabel(button));
     btn.setStyle(style);
-    btn.setCustomId(Button.validateCustomId(button));
-    
+
     const props = button.body.map(x => x.keyword.lexeme);
-    if(props.includes('emoji')) btn.setEmoji(Button.validateEmoji(button));
     if(props.includes('url')) btn.setURL(Button.validateLink(button, style));
+    else btn.setCustomId(Button.validateCustomId(button));
+    
+    if(props.includes('emoji')) btn.setEmoji(Button.validateEmoji(button));
     if(props.includes('disabled')) btn.setDisabled(Button.validateDisabled(button));
 
     return btn;
@@ -45,7 +47,7 @@ export class Button {
   private static validateStyle(button: BuilderDefinition) {
     const value = Button.validateValue(button, 'style');
 
-    if (!BUTTON_STYLES.includes(value.toLowerCase())) throw new Error(`You must define a valid style label! ${value} is not a button style!`);
+    if (!BUTTON_STYLES.includes(value.toLowerCase())) throw new Error(`You must define a valid button style! ${value} is not a button style!`);
 
     switch (value.toLowerCase()) {
       case "secondary": return ButtonStyle.Secondary;
