@@ -10,12 +10,6 @@ To install the library, you can use npm or yarn:
 npm install cordbuilder
 ```
 
-or
-
-```bash
-yarn add cordbuilder
-```
-
 ## Usage
 
 ### Button
@@ -31,14 +25,6 @@ const button = Button.from(`
   @id foo_bar
 `);
 
-// The `Button.edit()` function allows you to edit a button from a specific source code:
-
-Button.edit(button, `
-  @label bar
-  @style secondary
-  @disabled true
-`)
-
 // Now you can use the button as desired
 ```
 
@@ -51,7 +37,6 @@ The source should follow this format:
 - **@disabled**: `true` | `false`
 - **@url**: `any`
 
-
 ## Contributing
 
 We encourage contributions! Feel free to open an issue or submit a pull request.
@@ -59,4 +44,3 @@ We encourage contributions! Feel free to open an issue or submit a pull request.
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
