@@ -10,6 +10,10 @@ To install the library, you can use npm or yarn:
 npm install cordbuilder
 ```
 
+```bash
+yarn add cordbuilder
+```
+
 ## Usage
 
 ### Button
@@ -35,7 +39,52 @@ The source should follow this format:
 - **@id**: `any`
 - **@emoji**: `any`
 - **@disabled**: `true` | `false`
-- **@url**: `any`
+- **@url**: `url`
+
+
+### Embed 
+
+```javascript
+const { Embed } = require('cordbuilder');
+
+// The `Embed.from()` function allows you to create a button from a specific source code:
+
+const embed = Button.from(`
+  @title Hello!
+  @description Hello, World!
+  @footer:text foobar
+  @color #FF0000
+`)
+
+// Now you can use the embed as desired
+```
+
+The source should follow this format:
+
+#### Author
+
+- **@author:name**: `any`
+- **@author:url**: `url`
+- **@author:icon**: `url`
+
+### Fields
+
+- **@field:inline?**: `true`| `false`
+- **@field:name**: `any`
+- **@field:value**: `any`
+
+#### Footer
+
+- **@footer:text**: `any`
+- **@footer:icon**: `url`
+
+#### Others
+
+- **@title**: `string`
+- **@thumbnail**: `url`
+- **@image**: `url`
+- **@color**: `color` | `hex` | `random`
+- **@description**: `any`
 
 ## Contributing
 
