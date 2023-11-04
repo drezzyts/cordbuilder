@@ -1,4 +1,5 @@
 import { KEYWORDS } from "../constants/keywords";
+import { BuilderKeyword } from "../types/builder";
 
 export enum TokenKind {
   Keyword,
@@ -51,7 +52,7 @@ export class Lexer {
       this.next();
     }
 
-    if(KEYWORDS.includes(lexeme)) return new Token(TokenKind.Keyword, lexeme, this.line, this.column);
+    if(KEYWORDS.includes(lexeme as BuilderKeyword)) return new Token(TokenKind.Keyword, lexeme, this.line, this.column);
     else throw new Error(`Invalid keyword has been provided: ${lexeme}`)
   }
 

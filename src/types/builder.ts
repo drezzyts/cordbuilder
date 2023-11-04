@@ -1,5 +1,9 @@
+import { KEYWORDS } from "../constants/keywords";
+
+export type BuilderKeyword = typeof KEYWORDS[number];
+
 export interface BuilderValidator {
-  prop: string,
+  prop: typeof KEYWORDS[number],
   required: boolean,
   count: number,
 }

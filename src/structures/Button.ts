@@ -1,4 +1,4 @@
-import { ButtonBuilder, ButtonStyle } from "discord.js";
+import { ButtonBuilder, ButtonStyle } from 'discord.js';
 import Parser from "../interpreter/Parser";
 import Builder from "./Builder";
 

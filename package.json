@@ -6,7 +6,12 @@
   "scripts": {
     "test": "tsx src/index.spec.ts"
   },
-  "keywords": ["discord.js", "discordjs", "discord", "builders"],
+  "keywords": [
+    "discord.js",
+    "discordjs",
+    "discord",
+    "builders"
+  ],
   "author": "drezzyts",
   "license": "ISC",
   "devDependencies": {
