@@ -1,6 +1,6 @@
 # Cord Builder
 
-Cord Builder is a library that provides a Domain Specific Language (DSL) for creating builders for Discord.js. Currently, it supports the creation of buttons.
+Cord Builder is a library that provides a Domain Specific Language (DSL) for creating builders for Discord.js. Currently, it supports the creation of buttons and embeds.
 
 ## Installation
 
@@ -49,7 +49,7 @@ const { Embed } = require('cordbuilder');
 
 // The `Embed.from()` function allows you to create a button from a specific source code:
 
-const embed = Button.from(`
+const embed = Embed.from(`
   @title Hello!
   @description Hello, World!
   @footer:text foobar
