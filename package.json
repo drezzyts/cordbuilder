@@ -1,0 +1,25 @@
+{
+  "name": "cordbuilder",
+  "version": "2.0.0",
+  "description": "Simple dsl to create discord builders simple.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev:watch": "tsx watch src/index.ts",
+    "test": "tsx src/index.spec.ts",
+    "test:watch": "tsx watch src/index.spec.ts"
+  },
+  "keywords": [
+    "discordjs",
+    "discord",
+    "discord.js",
+    "builders",
+    "discord-builders"
+  ],
+  "author": "drezzyts",
+  "license": "ISC",
+  "devDependencies": {
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}
