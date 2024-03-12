@@ -5,7 +5,7 @@ export const LEXER_SPEC: Array<[RegExp, TokenKind]> = [
   [/^\s+/, TokenKind.Skippable],
   
   // String
-  [/^\".*\"/, TokenKind.String],
+  [/^\"[^"]*\"/, TokenKind.String],
   
   // Boolean
   [/^(true|false)/, TokenKind.Boolean],
