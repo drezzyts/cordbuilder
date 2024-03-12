@@ -1,5 +1,5 @@
 import { 
-   Identifier, ParenthesizedExpression, StringExpression, ArgumentsExpression, SubPropertyDeclaration 
+   Identifier, ParenthesizedExpression, StringExpression, ArgumentsExpression, SubPropertyDeclaration, BooleanExpression 
 } from "../structs/Expressions";
 
 import { PropertyDeclaration, Program } from "../structs/Statements";
@@ -48,19 +48,20 @@ export default class Parser implements ParserProps {
   }
 
   private parseExpression(): Expression {
-    if (this.current.kind == TokenKind.String)
-      return this.parseStringExpresison();
-
-    if (this.current.kind == TokenKind.OpenParen)
-      return this.parseParenthesizedExpression();
-
-    if (this.current.kind == TokenKind.OpenBracket)
-      return this.parseArgumentsExpression();
-
-    if (this.current.kind == TokenKind.Identifier)
-      return this.parseIdentifier();
-
-   throw new Error(`parser (l:${this.current.line}, c:${this.current.col}): Invalid token found during parsing: "${this.current.text}"`);
+    switch (this.current.kind) {
+      case TokenKind.String:
+        return this.parseStringExpresison();
+      case TokenKind.Boolean:
+        return this.parseBooleanExpresison();
+      case TokenKind.Identifier:
+        return this.parseIdentifier();
+      case TokenKind.OpenParen:
+        return this.parseParenthesizedExpression();
+      case TokenKind.OpenBracket:
+        return this.parseArgumentsExpression();
+      default:
+        throw new Error(`parser (l:${this.current.line}, c:${this.current.col}): Invalid token found during parsing: "${this.current.text}"`);
+      }
   }
 
   private parseStringExpresison(): StringExpression {
@@ -69,14 +70,21 @@ export default class Parser implements ParserProps {
 
     return new StringExpression(value);
   }
+
+  private parseBooleanExpresison(): BooleanExpression {
+    const token = this.expect(TokenKind.Boolean);
+    const value = Boolean(token.text);
+
+    return new BooleanExpression(value);
+  }
   
-  private parseParenthesizedExpression(): ParenthesizedExpression {
+  private parseParenthesizedExpression(): Expression {
     const open = this.expect(TokenKind.OpenParen);
     const expression = this.parseExpression();
     const close = this.expect(TokenKind.CloseParen);
     const parens: [open: Token, close: Token] = [open, close];
 
-    return new ParenthesizedExpression(parens, expression);
+    return expression;
   }
 
   private parseArgumentsExpression(): ArgumentsExpression {

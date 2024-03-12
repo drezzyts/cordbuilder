@@ -1,35 +1,56 @@
 import { ExpressionKind } from "../types/ast";
-import { BuilderPropertiesData, BuilderSubPropertiesData } from "../types/builder";
+import {
+  BuilderPropertiesData,
+  BuilderSubPropertiesData,
+} from "../types/builder";
 
 export const EMBED_PROPERTIES: BuilderPropertiesData[] = [
-  { prop: 'title', kind: ExpressionKind.StringExpression },
-  { prop: 'description', kind: ExpressionKind.StringExpression },
-  { prop: 'field', kind: ExpressionKind.ArgumentsExpression },
-  { prop: 'image', kind: ExpressionKind.StringExpression },
-  { prop: 'timestamp', kind: ExpressionKind.Identifier },
-  { prop: 'thumb', kind: ExpressionKind.StringExpression },
-  { prop: 'footer', kind: ExpressionKind.ArgumentsExpression },
-  { prop: 'author', kind: ExpressionKind.StringExpression },
-  { prop: 'url', kind: ExpressionKind.StringExpression },
-  { prop: 'color', kind: ExpressionKind.StringExpression }
+  { name: "title", kind: ExpressionKind.StringExpression },
+  { name: "description", kind: ExpressionKind.StringExpression },
+  { name: "image", kind: ExpressionKind.StringExpression },
+  { name: "timestamp", kind: ExpressionKind.BooleanExpression },
+  { name: "thumb", kind: ExpressionKind.StringExpression },
+  { name: "url", kind: ExpressionKind.StringExpression },
+  { name: "color", kind: ExpressionKind.StringExpression },
+  { name: "field", kind: ExpressionKind.ArgumentsExpression },
+  { name: "author", kind: ExpressionKind.StringExpression },
+  { name: "footer", kind: ExpressionKind.ArgumentsExpression },
 ];
 
 export const EMBED_SUB_PROPERTIES: BuilderSubPropertiesData[] = [
-  { prop: 'field', props: [
-      { prop: 'name', kind: ExpressionKind.StringExpression }, 
-      { prop: 'value', kind: ExpressionKind.StringExpression },
-      { prop: 'inline', kind: ExpressionKind.Identifier }
-    ]
+  {
+    name: "field",
+    props: [
+      { name: "name", kind: ExpressionKind.StringExpression, required: true },
+      { name: "value", kind: ExpressionKind.StringExpression, required: true },
+      { name: "inline", kind: ExpressionKind.BooleanExpression },
+    ],
   },
-  { prop: 'footer', props: [
-      { prop: 'text', kind: ExpressionKind.StringExpression }, 
-      { prop: 'icon', kind: ExpressionKind.StringExpression }
-    ] 
+  {
+    name: "footer",
+    props: [
+      { name: "text", kind: ExpressionKind.StringExpression, required: true },
+      { name: "icon", kind: ExpressionKind.StringExpression },
+    ],
   },
-  { prop: 'author', props: [
-      { prop: 'name', kind: ExpressionKind.StringExpression }, 
-      { prop: 'icon', kind: ExpressionKind.StringExpression }, 
-      { prop: 'url', kind: ExpressionKind.StringExpression }
-    ] 
-  }
-]
+  {
+    name: "author",
+    props: [
+      { name: "name", kind: ExpressionKind.StringExpression, required: true },
+      { name: "icon", kind: ExpressionKind.StringExpression },
+      { name: "url", kind: ExpressionKind.StringExpression },
+    ],
+  },
+];
+
+export type EmbedPropertyNames =
+  | "title"
+  | "description"
+  | "field"
+  | "image"
+  | "timestamp"
+  | "thumb"
+  | "footer"
+  | "author"
+  | "url"
+  | "color";

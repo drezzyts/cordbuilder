@@ -1,5 +1,6 @@
 export enum TokenKind {
   String = 'String',
+  Boolean = 'Boolean',
   Identifier = 'Identifier',
 
   OpenParen = "OpenParen",
@@ -26,6 +27,7 @@ export interface TokenProps {
 export enum ExpressionKind {
   Identifier = 'Identifier',
   StringExpression = 'StringExpression',
+  BooleanExpression = 'BooleanExpression',
   ParenthesizedExpression = 'ParenthesizedExpression',
   ArgumentsExpression = 'ArgumentsExpression',
   SubPropertyDeclaration = "SubPropertyDeclaration"

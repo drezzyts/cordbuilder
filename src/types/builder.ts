@@ -1,11 +1,12 @@
 import { ExpressionKind } from "./ast";
 
 export interface BuilderPropertiesData {
-  prop: string,
-  kind: ExpressionKind
+  name: string,
+  kind: ExpressionKind,
+  required?: boolean
 }
 
 export interface BuilderSubPropertiesData {
-  prop: string,
+  name: string,
   props: BuilderPropertiesData[]
 }

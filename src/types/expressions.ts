@@ -11,6 +11,11 @@ export interface StringExpressionProps extends Expression {
   value: string
 };
 
+export interface BooleanExpressionProps extends Expression {
+  kind: ExpressionKind.BooleanExpression,
+  value: boolean
+};
+
 export interface ParenthesizedExpressionProps extends Expression {
   kind: ExpressionKind.ParenthesizedExpression,
   parens: [open: Token, close: Token],

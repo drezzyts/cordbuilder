@@ -6,6 +6,9 @@ export const LEXER_SPEC: Array<[RegExp, TokenKind]> = [
   
   // String
   [/^\".*\"/, TokenKind.String],
+  
+  // Boolean
+  [/^(true|false)/, TokenKind.Boolean],
    
   // Identifier
   [/^\w+/, TokenKind.Identifier],

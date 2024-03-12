@@ -1,6 +1,7 @@
 import { ExpressionKind } from "../types/ast";
 import {
   ArgumentsExpressionProps,
+  BooleanExpressionProps,
   Expression,
   IdentifierProps,
   ParenthesizedExpressionProps,
@@ -16,6 +17,14 @@ export class StringExpression implements StringExpressionProps {
   
   public constructor(public value: string) {
     this.kind = ExpressionKind.StringExpression;
+  }
+}
+
+export class BooleanExpression implements BooleanExpressionProps {
+  public kind: ExpressionKind.BooleanExpression;
+  
+  public constructor(public value: boolean) {
+    this.kind = ExpressionKind.BooleanExpression;
   }
 }
 
