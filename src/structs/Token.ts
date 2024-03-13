@@ -22,6 +22,7 @@ export default class Token implements TokenProps {
       case TokenKind.Colon: return ":"
       case TokenKind.Skippable: return " "
       case TokenKind.Eof: return "\0"
+      case TokenKind.Boolean: return "true or false"
     }
   }
 }
