@@ -1,6 +1,6 @@
 {
   "name": "cordbuilder",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Simple dsl to create discord builders simple.",
   "main": "dist/index.js",
   "scripts": {

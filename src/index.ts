@@ -1,10 +1,6 @@
 import CordButton from "./structs/Button";
 import CordEmbed from "./structs/Embed";
 
-const mod = { 
-  CordEmbed, 
-  CordButton 
-};
+export { CordButton, CordEmbed }; 
 
-export default mod;
-module.exports = mod;
+module.exports = { CordButton, CordEmbed };
