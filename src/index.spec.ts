@@ -1,23 +1,20 @@
+import CordButton from "./structs/Button";
 import CordEmbed from "./structs/Embed";
 
 const embed = CordEmbed.from(`
   @title ( "Hello, World!" )
   @description ( "Hello, World! This is a description! " )
   
-  @field [
-    :name ( "Field 1" ),
-    :value ( "Field 1" )
-  ]
-
-  @field [
-    :name ( "Field 2" ),
-    :value ( "Field 2" )
-  ]
-
-  @field [
-    :name ( "Field 3" ),
-    :value ( "Field 3" )
-  ]
+  @field [:name "field1", :value "field1"]
+  @field [:name "field2", :value "field2"]
 `);
 
-console.log(embed);
+const button = CordButton.from(`
+  @id "hello_btn"
+  @style Primary
+  @disabled true
+  @label "hello"
+  @url "https://bunda.com"
+`);
+
+console.log(embed, button);
