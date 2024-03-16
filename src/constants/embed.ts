@@ -9,7 +9,7 @@ export const EMBED_PROPERTIES: BuilderPropertiesData[] = [
   { name: "description", kind: ExpressionKind.StringExpression },
   { name: "image", kind: ExpressionKind.StringExpression },
   { name: "timestamp", kind: ExpressionKind.BooleanExpression },
-  { name: "thumb", kind: ExpressionKind.StringExpression },
+  { name: "thumbnail", kind: ExpressionKind.StringExpression },
   { name: "url", kind: ExpressionKind.StringExpression },
   { name: "color", kind: ExpressionKind.StringExpression },
   { name: "field", kind: ExpressionKind.ArgumentsExpression },
