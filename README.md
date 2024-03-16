@@ -21,12 +21,13 @@ yarn add cordbuilder
 ```javascript
 const { CordButton } = require('cordbuilder');
 
-// The `Button.from()` function allows you to create a button from a specific source code:
+// The `CordButton.from()` function allows you to create a button from a specific source code:
 
 const button = CordButton.from(`
   @label "foo"
-  @style "Primary"
+  @style Primary
   @id "foo_bar"
+  @disabled false
 `);
 
 // Now you can use the button as desired
@@ -46,15 +47,15 @@ The source should follow this format:
 ```javascript
 const { CordEmbed } = require('cordbuilder');
 
-// The `Embed.from()` function allows you to create a button from a specific source code:
+// The `CordEmbed.from()` function allows you to create a button from a specific source code:
 
 const embed = CordEmbed.from(`
   @title "Hello!"
   @description "Hello, World!"
   @color "#FF0000"
   
-  @field [:name: "Hello 1", :value "Hello 1"]
-  @field [:name: "Hello 2", :value "Hello 2"]
+  @field [:name: "Hello 1", :value "Hello 1", :inline false]
+  @field [:name: "Hello 2", :value "Hello 2", :inline true]
 
   @footer [:text "foobar"]
 `)
