@@ -2,6 +2,8 @@
 
 Cord Builder is a library that provides a Domain Specific Language (DSL) for creating builders for Discord.js. Currently, it supports the creation of buttons.
 
+> Note:  For syntax highlighting and code snippets, you can use the CordBuilder extension. It's available on the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=drezzyts.cordbuilder)
+
 ## 🚀 Installation
 
 To install the library, you can use npm or yarn:
@@ -18,20 +20,7 @@ yarn add cordbuilder
 
 ### ✅ Button
 
-```javascript
-const { CordButton } = require('cordbuilder');
-
-// The `CordButton.from()` function allows you to create a button from a specific source code:
-
-const button = CordButton.from(`
-  @label "foo"
-  @style Primary
-  @id "foo_bar"
-  @disabled false
-`);
-
-// Now you can use the button as desired
-```
+<img src="https://i.postimg.cc/Pr9zFr2Q/button.png"/>
 
 The source should follow this format:
 
@@ -44,25 +33,7 @@ The source should follow this format:
 
 ### ✅ Embed
 
-```javascript
-const { CordEmbed } = require('cordbuilder');
-
-// The `CordEmbed.from()` function allows you to create a button from a specific source code:
-
-const embed = CordEmbed.from(`
-  @title "Hello!"
-  @description "Hello, World!"
-  @color "#FF0000"
-  
-  @field [:name: "Hello 1", :value "Hello 1", :inline false]
-  @field [:name: "Hello 2", :value "Hello 2", :inline true]
-
-  @footer [:text "foobar"]
-`)
-
-// Now you can use the embed as desired
-```
-
+<img src="https://i.postimg.cc/XY5cMSPS/embed.png"/>
 The source should follow this format:
 
 ### Author
