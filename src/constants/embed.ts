@@ -42,15 +42,3 @@ export const EMBED_SUB_PROPERTIES: BuilderSubPropertiesData[] = [
     ],
   },
 ];
-
-export type EmbedPropertyNames =
-  | "title"
-  | "description"
-  | "field"
-  | "image"
-  | "timestamp"
-  | "thumb"
-  | "footer"
-  | "author"
-  | "url"
-  | "color";
