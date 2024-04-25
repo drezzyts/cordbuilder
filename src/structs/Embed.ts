@@ -55,7 +55,7 @@ export default class CordEmbed extends CordBuilder {
     );
     const image = properties.find((p) => p.identifier.name == "image");
     const timestamp = properties.find((p) => p.identifier.name == "timestamp");
-    const thumb = properties.find((p) => p.identifier.name == "thumb");
+    const thumbnail = properties.find((p) => p.identifier.name == "thumbnail");
     const url = properties.find((p) => p.identifier.name == "url");
     const color = properties.find((p) => p.identifier.name == "color");
 
@@ -63,7 +63,7 @@ export default class CordEmbed extends CordBuilder {
     if (description) this.buildDescription(embed, description);
     if (image) this.buildImage(embed, image);
     if (timestamp) this.buildTimestamp(embed, timestamp);
-    if (thumb) this.buildThumb(embed, thumb);
+    if (thumbnail) this.buildThumb(embed, thumbnail);
     if (url) this.buildUrl(embed, url);
     if (color) this.buildColor(embed, color);
 
